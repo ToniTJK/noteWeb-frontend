@@ -1,0 +1,31 @@
+$bg-main: #7952b3;
+
+#nav {
+  background-color: $bg-main;
+  border: 1px solid black;
+  border-radius: 3px;
+  
+  .navbar-brand {
+    color: white;
+  }
+
+  ul li {
+    a {
+      color: white;
+    }
+    .disabled {
+      color: #ccc;
+    }
+  }
+
+  .is-active {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: yellow;
+    border-radius: 3px;
+    border-bottom: 1px solid black;
+    a {
+      color: black !important;
+    }
+  }
+}
