@@ -8,29 +8,28 @@ import { UserService } from './../../services/user/user.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  providers: [ UserService ]
+  providers: [UserService],
 })
 export class HeaderComponent implements OnInit, DoCheck {
   public identity;
   public token;
 
-  constructor(
-    private _userService: UserService,
-    private _router: Router
-  ) { }
+  constructor(private _userService: UserService, private _router: Router) {}
 
   ngOnInit() {
     this.identity = this._userService.getIdentity();
   }
 
   ngDoCheck() {
-    this.identity =this._userService.getIdentity();
+    this.identity = this._userService.getIdentity();
   }
 
-  logout(){
-    localStorage.clear();
-    this.identity = null;
-    this._router.navigate(['/'])
+  logout() {
+    var r = confirm('Are you sure you want to exit?');
+    if (r == true) {
+      localStorage.clear();
+      this.identity = null;
+      this._router.navigate(['/']);
+    } 
   }
-
 }
