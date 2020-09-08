@@ -12,6 +12,8 @@ import { CreateNoteComponent } from './components/create-note/create-note.compon
 import { EditNoteComponent } from './components/edit-note/edit-note.component';
 import { MyPanelComponent } from './components/my-panel/my-panel.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LogInComponent } from './components/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     CreateNoteComponent,
     EditNoteComponent,
     MyPanelComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SignUpComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+
+    #form {
+        width: 50%;
+        border: 1px solid black;
+        border-radius: 3px;
+        margin: 20px;
+        padding: 20px;
+
+        .container-button {
+            text-align: right;
+        }
+    }
+}

@@ -7,6 +7,8 @@ import { CreateNoteComponent } from './components/create-note/create-note.compon
 import { EditNoteComponent } from './components/edit-note/edit-note.component';
 import { MyPanelComponent } from './components/my-panel/my-panel.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LogInComponent } from './components/log-in/log-in.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'create-note', component: CreateNoteComponent },
   { path: 'edit-note', component: EditNoteComponent },
   { path: 'my-panel', component: MyPanelComponent },
+  { path: 'sign-up', component: SignUpComponent },
+  { path: 'log-in', component: LogInComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
