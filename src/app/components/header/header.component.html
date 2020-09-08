@@ -1,5 +1,5 @@
 <nav id="nav" class="navbar navbar-expand-lg mt-3 ml-3 mr-3">
-  <a class="navbar-brand" href="#">App Notes</a>
+  <a class="navbar-brand" routerLink="/">App Notes</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -20,23 +20,31 @@
           <span class="sr-only">(current)</span></a
         >
       </li>
-      <li class="nav-item" routerLinkActive="is-active">
+<!--       <li class="nav-item">
+        <a class="nav-link" target="_blank" href="https://github.com/ToniTJK/noteWeb-frontend"
+          ><i class="fab fa-github"></i> GitHub </a
+        >
+      </li> -->
+      <li class="nav-item" routerLinkActive="is-active" *ngIf="identity">
         <a
-          class="nav-link disabled"
+          class="nav-link"
           routerLink="/my-panel"
           tabindex="-1"
-          aria-disabled="true"
         >
           <i class="far fa-sticky-note"></i> My Panel</a
         >
       </li>
-      <li class="nav-item" routerLinkActive="is-active">
-        <a class="nav-link" href="#"
-          ><i class="fab fa-github"></i> GitHub Code</a
+      <li class="nav-item" routerLinkActive="is-active" *ngIf="!identity">
+        <a
+          class="nav-link disabled"
+          routerLink="/my-panel"
+          tabindex="-1"
+        >
+          <i class="far fa-sticky-note"></i> My Panel</a
         >
       </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right mr-2 mt-2 mt-lg-0">
+    <ul class="nav navbar-nav navbar-right mr-2 mt-2 mt-lg-0" *ngIf="!identity">
       <li class="nav-item" routerLinkActive="is-active">
         <a class="nav-link" routerLink="/sign-up">
           Sign Up 
@@ -47,6 +55,14 @@
         <a class="nav-link" routerLink="/log-in">
           Log In
           <i class="fas fa-sign-in-alt"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right mr-2 mt-2 mt-lg-0 bg-danger border br-3 pointer" *ngIf="identity">
+      <li class="nav-item">
+        <a (click)="logout()" class="nav-link">
+          Log Out
+          <i class="fas fa-sign-out-alt"></i>
         </a>
       </li>
     </ul>

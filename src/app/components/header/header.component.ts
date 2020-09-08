@@ -1,15 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { Router } from '@angular/router';
+
+/* SERVICES */
+import { UserService } from './../../services/user/user.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  providers: [ UserService ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, DoCheck {
+  public identity;
+  public token;
 
-  constructor() { }
+  constructor(
+    private _userService: UserService,
+    private _router: Router
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.identity = this._userService.getIdentity();
+  }
+
+  ngDoCheck() {
+    this.identity =this._userService.getIdentity();
+  }
+
+  logout(){
+    localStorage.clear();
+    this.identity = null;
+    this._router.navigate(['/'])
   }
 
 }

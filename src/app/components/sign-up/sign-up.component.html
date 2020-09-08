@@ -1,5 +1,5 @@
 <div class="container form-container">
-  <form id="form">
+  <form id="form" #signupForm="ngForm">
     <h2 class="mb-3 text-center">Sign Up</h2>
     <div class="row">
       <div class="col">
@@ -7,22 +7,33 @@
           <label for="name">Name</label>
           <input
             type="text"
+            name="name"
+            #name="ngModel"
+            [(ngModel)]="user.name"
             class="form-control"
             id="name"
             aria-describedby="name"
+            required
           />
+          <small class="text-danger" *ngIf="!name.valid && name.touched">
+            Required field.
+          </small>
         </div>
 
         <div class="form-group">
           <label for="email">Email address</label>
           <input
             type="email"
+            name="email"
+            #email="ngModel"
+            [(ngModel)]="user.email"
             class="form-control"
             id="email"
             aria-describedby="email"
+            required
           />
-          <small id="emailHelp" class="form-text text-muted">
-            We'll never share your email with anyone else.
+          <small class="text-danger" *ngIf="!email.valid && email.touched">
+            Required field.
           </small>
         </div>
 
@@ -30,12 +41,70 @@
           <label for="password">Password</label>
           <input
             type="password"
+            name="password"
+            #password="ngModel"
+            [(ngModel)]="user.password"
             class="form-control"
             id="password"
+            required
           />
+          <small
+            class="text-danger"
+            *ngIf="!password.valid && password.touched"
+          >
+            Required field.
+          </small>
         </div>
+        <!-- RESULT MSSG -->
+        <div *ngIf="status == 'error'"> 
+          <div
+            class="alert alert-danger alert-dismissible fade show"
+            role="alert"
+          >
+            <strong>Error!</strong> {{ mssg }}
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <div *ngIf="status == 'success'">
+          <div
+            class="alert alert-success alert-dismissible fade show"
+            role="alert"
+          >
+            <p><strong>Congratulations!</strong> {{ mssg }}</p>
+            <hr>
+            <p>
+              Now you can
+              <a routerLink="/log-in" target="_blank" rel="noopener noreferrer"
+                >log in</a
+              >.
+            </p>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <!-- RESULT MSSG END -->
         <div class="container-button">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="onSubmit(signupForm)"
+            [disabled]="!signupForm.form.valid"
+          >
+            Submit
+          </button>
         </div>
       </div>
     </div>

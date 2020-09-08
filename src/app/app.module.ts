@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+/* MODULES */
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 /* COMPONENTS */
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -30,9 +34,11 @@ import { LogInComponent } from './components/log-in/log-in.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
