@@ -53,6 +53,7 @@ export class MyPanelComponent implements OnInit {
         res => {
           this.status = "success";
           this.mssg = res.mssg;
+          this.getNotes();
         },
         err => {
           this.status = "error";

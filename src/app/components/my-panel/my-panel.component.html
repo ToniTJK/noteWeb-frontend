@@ -1,5 +1,6 @@
 <div class="container mt-2">
   <div class="row">
+      <!-- RES MESSAGES -->
     <div class="col-md-12" *ngIf="status == 'error'">
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error!</strong> {{ mssg }}
@@ -26,6 +27,8 @@
         </button>
       </div>
     </div>
+    <!-- RES MESSAGES END -->
+    <!-- NOTES -->
     <div class="col-md-4" *ngFor="let note of notes">
       <div class="card mt-4">
         <div class="card-header">
@@ -49,5 +52,6 @@
         </div>
       </div>
     </div>
+    <!-- NOTES END -->
   </div>
 </div>
