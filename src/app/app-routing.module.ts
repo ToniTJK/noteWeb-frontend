@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'create-note', component: CreateNoteComponent },
-  { path: 'edit-note', component: EditNoteComponent },
+  { path: 'edit-note/:id', component: EditNoteComponent },
   { path: 'my-panel', component: MyPanelComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'log-in', component: LogInComponent },

@@ -21,28 +21,25 @@
         >
       </li>
       <li class="nav-item" routerLinkActive="is-active" *ngIf="identity">
-        <a
-          class="nav-link"
-          routerLink="/my-panel"
-          tabindex="-1"
-        >
+        <a class="nav-link" routerLink="/my-panel" tabindex="-1">
           <i class="far fa-sticky-note"></i> My Panel</a
         >
       </li>
       <li class="nav-item" routerLinkActive="is-active" *ngIf="!identity">
-        <a
-          class="nav-link disabled"
-          routerLink="/my-panel"
-          tabindex="-1"
-        >
+        <a class="nav-link disabled" routerLink="/my-panel" tabindex="-1">
           <i class="far fa-sticky-note"></i> My Panel</a
+        >
+      </li>
+      <li class="nav-item" routerLinkActive="is-active" *ngIf="identity">
+        <a class="nav-link" routerLink="/create-note" tabindex="-1">
+          <i class="fas fa-plus-square"></i> Add Note</a
         >
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right mr-2 mt-2 mt-lg-0" *ngIf="!identity">
       <li class="nav-item" routerLinkActive="is-active">
         <a class="nav-link" routerLink="/sign-up">
-          Sign Up 
+          Sign Up
           <i class="fas fa-user-plus"></i>
         </a>
       </li>
@@ -53,7 +50,10 @@
         </a>
       </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right mr-2 mt-2 mt-lg-0 bg-danger border br-3 pointer" *ngIf="identity">
+    <ul
+      class="nav navbar-nav navbar-right mr-2 mt-2 mt-lg-0 bg-danger border br-3 pointer"
+      *ngIf="identity"
+    >
       <li class="nav-item">
         <a (click)="logout()" class="nav-link">
           Log Out

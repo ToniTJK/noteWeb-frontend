@@ -8,7 +8,7 @@ import { UserService } from './../../services/user/user.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  providers: [UserService],
+  providers: [ UserService ],
 })
 export class HeaderComponent implements OnInit, DoCheck {
   public identity;

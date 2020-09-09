@@ -1,1 +1,96 @@
-<p>create-note works!</p>
+<div class="container form-container">
+  <form id="form" #addNoteForm="ngForm">
+    <h2 class="mb-3 text-center">Create a Note</h2>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="name">Title</label>
+          <input
+            type="text"
+            name="title"
+            #title="ngModel"
+            [(ngModel)]="note.title"
+            class="form-control"
+            id="title"
+            aria-describedby="title"
+            required
+          />
+          <small class="text-danger" *ngIf="!title.valid && title.touched">
+            Required field.
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Description</label>
+          <input
+            type="text"
+            name="description"
+            #description="ngModel"
+            [(ngModel)]="note.description"
+            class="form-control"
+            id="description"
+            aria-describedby="description"
+            required
+          />
+          <small
+            class="text-danger"
+            *ngIf="!description.valid && description.touched"
+          >
+            Required field.
+          </small>
+        </div>
+        <!-- RESULT MSSG -->
+        <div *ngIf="status == 'error'">
+          <div
+            class="alert alert-danger alert-dismissible fade show"
+            role="alert"
+          >
+            <strong>Error!</strong> {{ mssg }}
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <div *ngIf="status == 'success'">
+          <div
+            class="alert alert-success alert-dismissible fade show"
+            role="alert"
+          >
+            <p>{{ mssg }}</p>
+            <hr />
+            <p>
+              Now you can
+              <a routerLink="/log-in" target="_blank" rel="noopener noreferrer"
+                >log in</a
+              >.
+            </p>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <!-- RESULT MSSG END -->
+        <div class="container-button">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="onSubmit(addNoteForm)"
+            [disabled]="!addNoteForm.form.valid"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
