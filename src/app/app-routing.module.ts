@@ -11,7 +11,6 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'create-note', component: CreateNoteComponent },

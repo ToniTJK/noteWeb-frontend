@@ -64,7 +64,7 @@ export class LogInComponent implements OnInit {
           this.mssg = 'Sesión iniciada correctamente.';
           localStorage.setItem('token', JSON.stringify(this.token));
 
-          this._route.navigate(['/']);
+          this._route.navigate(['/my-panel']);
         }
       },
       (err) => {

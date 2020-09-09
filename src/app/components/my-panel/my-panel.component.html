@@ -1,1 +1,17 @@
-<p>my-panel works!</p>
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let note of notes">
+      <div class="card mt-4">
+        <div class="card-header"> {{ note.title }} </div>
+        <div class="card-body">
+          <p class="card-text">
+            {{ note.description }}
+          </p>
+        </div>
+        <div class="card-footer text-muted">
+            {{ note.createdAt }}
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

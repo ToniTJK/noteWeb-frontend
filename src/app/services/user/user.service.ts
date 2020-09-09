@@ -1,6 +1,5 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 /* MODEL */
@@ -12,7 +11,7 @@ import { GLOBAL } from './../global';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService implements OnInit {
+export class UserService {
   public url: string;
   public identity;
   public token;
@@ -20,8 +19,6 @@ export class UserService implements OnInit {
   constructor(private _http: HttpClient) {
     this.url = GLOBAL.url;
   }
-
-  ngOnInit() {}
 
   createUser(user: User): Observable<any> {
     let params = JSON.stringify(user);
