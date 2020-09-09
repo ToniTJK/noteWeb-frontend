@@ -6,7 +6,6 @@ import { NoteService } from './../../services/note/note.service';
 
 /* MODEL */
 import { Note } from './../../models/note.model';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-my-panel',
@@ -15,7 +14,6 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   providers: [ NoteService ]
 })
 export class MyPanelComponent implements OnInit {
-  public note: Note;
   public notes: Note[];
   public mssg: string;
   public status: string;
@@ -23,7 +21,7 @@ export class MyPanelComponent implements OnInit {
   constructor(
     private _noteService: NoteService
   ) { 
-    this.note = new Note('','','','','');
+    
   }
 
   ngOnInit(): void {
@@ -34,7 +32,7 @@ export class MyPanelComponent implements OnInit {
     this._noteService.getNotes().subscribe(
       res => {
         if (!res.notes) {
-          this.status = "empty";
+          this.status = "error";
           this.mssg = "No existen notas, puedes crear aquí: <a class='btn btn-primary' routerLink='/create-note'>crea</a>";
         } else {
           this.notes = res.notes;
@@ -44,9 +42,24 @@ export class MyPanelComponent implements OnInit {
       err => {
         this.status = "error";
         this.mssg = err.error.mssg;
-        console.log(err);
       }
     );
+  }
+
+  deleteNote(note_id){
+    var r = confirm("Are you sure you want to delete?");
+    if (r == true) {
+      this._noteService.removeNote(note_id).subscribe(
+        res => {
+          this.status = "success";
+          this.mssg = res.mssg;
+        },
+        err => {
+          this.status = "error";
+          this.mssg = err.error.mssg;
+        }
+      )
+    }
   }
 
 }

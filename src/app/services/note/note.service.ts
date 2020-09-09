@@ -36,4 +36,15 @@ export class NoteService {
 
     return this._http.get<Note>(this.url+'get-notes/'+id, { 'headers': headers });
   }
+
+  removeNote(id): Observable<any> {
+    let token = this._userService.getToken();
+    let headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('Authorization', token);
+
+    return this._http.delete(this.url+'delete-note/'+id, { 'headers': headers });
+  }
+
+  
 }
