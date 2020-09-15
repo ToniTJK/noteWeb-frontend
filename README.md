@@ -1,34 +1,5 @@
-<!--
-*** Thanks for checking out this README Template. If you have a suggestion that would
-*** make this better, please fork the repo and create a pull request or simply open
-*** an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email
--->
-
-
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
+[my-website-shield]][my-website-url] (https://tonitorrescuenca.com/#/inicio)
 
 
 <!-- PROJECT LOGO -->
@@ -77,6 +48,7 @@ My first web created with MEAN Stack Framework (MongoDB, ExpressJS, AngularJS an
 
 ### Built With
 
+* [Angular 10](https://angular.io/)
 * [Bootstrap 4](https://getbootstrap.com/)
 * [Font Awesome](https://fontawesome.com/)
 
@@ -115,9 +87,9 @@ npm install
 url = 'ENTER YOUR API';
 ```
 
-4. Run the application
+4. Run the application (http://localhost:4200/)
 ```sh
-ng serve -o (http://localhost:4200/)
+ng serve -o 
 ```
 
 <!-- LICENSE -->
@@ -148,4 +120,6 @@ Project Link: [https://github.com/ToniTJK/noteWeb-frontend](https://github.com/T
 [license-url]: https://github.com/ToniTJK/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/tonitorresprogramador/
+[my-website-shield]: https://img.shields.io/badge/my-website-green
+[my-website-url]: https://tonitorrescuenca.com/#/inicio
 [product-screenshot]: images/screenshot.png
