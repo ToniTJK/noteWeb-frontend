@@ -48,8 +48,7 @@ export class EditNoteComponent implements OnInit {
       (res) => {
         this.status = 'success';
         this.mssg = res.mssg;
-        console.log(res);
-        /* this._route.navigate(['/my-panel']); */
+        this._route.navigate(['/my-panel']);        
       },
       (err) => {
         console.log(err);
