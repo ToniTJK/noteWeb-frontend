@@ -1,31 +1,5 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[my-website-shield]][my-website-url] (https://tonitorrescuenca.com/#/inicio)
-
-
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://github.com/ToniTJK/noteWeb-frontend">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">YOUR_TITLE</h3>
-
-  <p align="center">
-    YOUR_SHORT_DESCRIPTION
-    <br />
-    <a href="https://github.com/ToniTJK/noteWeb-frontend"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/ToniTJK/noteWeb-frontend">View Demo</a>
-    ·
-    <a href="https://github.com/ToniTJK/noteWeb-frontend/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/ToniTJK/noteWeb-frontend/issues">Request Feature</a>
-  </p>
-</p>
-
-
+[my-website-shield][my-website-url] (https://tonitorrescuenca.com/#/inicio)
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -103,6 +77,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 Email: [tonitorres.dev@gmail.com](tonitorres.dev@gmail.com)
+
+My website: [https://tonitorrescuenca.com](https://tonitorrescuenca.com)
 
 Project Link: [https://github.com/ToniTJK/noteWeb-frontend](https://github.com/ToniTJK/noteWeb-frontend)
 
