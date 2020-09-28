@@ -1,5 +1,5 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[my-website-shield][my-website-url] (https://tonitorrescuenca.com/#/inicio)
+[![MyWebsite][my-website-shield]][my-website-url]
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
